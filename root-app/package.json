@@ -5,6 +5,7 @@
     "start:header": "cd .. && cd header-app && yarn start",
     "start:content": "cd .. && cd content-app && yarn start",
     "start:utility": "cd .. && cd utilities && yarn start",
+    "start:all": "concurrently 'yarn:start' 'yarn:start:header' 'yarn:start:content' 'yarn:start:utility'",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",

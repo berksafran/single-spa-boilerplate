@@ -19,9 +19,21 @@ export default function Header(props) {
     sendMessage("content", childMessage);
   };
 
+  const navigateToContent = () => {
+    if (props?.singleSpa) props.singleSpa?.navigateToUrl("/content");
+  };
+
   return (
     <section className="container mx-auto flex flex-col space-y-5 p-20 pt-10 pb-12 bg-gray-200 text-gray-500 border-2 border-dashed border-gray-700 border-t-0">
-      <p className="text-500 text-2xl pb-10 font-semibold">{props.name}</p>
+      <div className="flex justify-between items-center pb-10">
+        <p className="text-500 text-2xl font-semibold">{props.name}</p>
+        <button
+          onClick={navigateToContent}
+          className="p-3 rounded-md border border-solid border-red-400"
+        >
+          Go to /content
+        </button>
+      </div>
       <div className="text-slate-800 font-mono">
         <p>Incoming Props (from root-app):</p>
         <p className="m-2 p-2 bg-slate-600 text-white text-sm">{props?.text}</p>
