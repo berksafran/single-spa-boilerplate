@@ -1,0 +1,11 @@
+{
+  "imports": {
+    "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
+    "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js",
+    "axios": "https://cdn.jsdelivr.net/npm/axios@1.2.1/dist/axios.min.js",
+    "@safran/root-config": "//localhost:3000/safran-root-config.js",
+    "@safran/utilities": "//localhost:3001/safran-utilities.js",
+    "@safran/header-app": "//localhost:3002/safran-header-app.js",
+    "@safran/content-app": "//localhost:3003/safran-content-app.js"
+  }
+}

@@ -13,6 +13,9 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
+    devServer: {
+      static: "./importmaps",
+    },
     // modify the webpack config however you'd like to by adding to this object
     externals: ["@safran/utilities"],
     plugins: [
@@ -21,7 +24,6 @@ module.exports = (webpackConfigEnv, argv) => {
         template: "src/index.ejs",
         templateParameters: {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
-          isTest: "testEnvVariable",
           orgName,
         },
       }),
