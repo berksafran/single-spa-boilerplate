@@ -3,5 +3,5 @@
 ## Usage
 
 - cd `root-app`
-- `yarn start:all`
-- go to `localhost:9000`
+- `yarn start:dev:all`
+- go to `localhost:3000`

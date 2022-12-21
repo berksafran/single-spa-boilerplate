@@ -26,15 +26,16 @@ if (isDev) {
   app.use(express.static(rootAppPath));
 } else {
   // if NODE_ENV=production ..
-  //   const expressStaticGzip = require("express-static-gzip");
-  //   app.use("/", expressStaticGzip(rootAppPath));
-  app.use(
-    "",
-    express.static(path.join(__dirname, "dist"), {
-      extensions: [".js", ".js.map"],
-    })
-  );
-  app.use("", express.static(path.join(__dirname, "importmaps")));
+  const expressStaticGzip = require("express-static-gzip");
+  app.use("/", expressStaticGzip(path.join(__dirname, "dist")));
+  app.use("/", expressStaticGzip(path.join(__dirname, "importmaps")));
+  //   app.use(
+  //     "",
+  //     express.static(path.join(__dirname, "dist"), {
+  //       extensions: [".js", ".js.map"],
+  //     })
+  //   );
+  //   app.use("", express.static(path.join(__dirname, "importmaps")));
 }
 
 app.get("/", function (req, res) {
